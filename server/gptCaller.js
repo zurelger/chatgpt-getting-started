@@ -11,7 +11,7 @@ export class GptCaller {
   openai = null;
 
   constructor() {
-    if (OPENAI_SECRET_KEY==="YOUR_OPENAI") {
+    if (OPENAI_SECRET_KEY==="YOUR_OPENAI_SECRET_KEY") {
       console.log(red_color, missing_env_error);
       return;
     }
@@ -26,7 +26,7 @@ export class GptCaller {
   }
 
   async askChatGPT(requestText) {
-    if (OPENAI_SECRET === "YOUR_OPENAI") {
+    if (OPENAI_SECRET === "YOUR_OPENAI_SECRET_KEY") {
       console.log(red_color, missing_env_error);
       return { success: false, err: missing_env_error };
     }
