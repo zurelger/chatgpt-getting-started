@@ -53,35 +53,12 @@ The `backend` directory contains the implementation of the server side of the pr
 
 The `frontend` directory contains a React application that talks with the genezio server.
 
-## Run the project
-
-### Clone this example
-
-Clone the repository:
-
-```
-git clone https://github.com/Genez-io/genezio-examples
-```
-
-Navigate to the following directory:
-
-```
-cd ./genezio-examples/javascript/chatgpt-project
-```
-
 ### Test your project locally
 
 Test the project locally:
 
 ```
 genezio local
-```
-
-Open a new terminal, navigate to the following directory, and run npm start to launch the React application:
-
-```
-cd ./client
-npm run dev
 ```
 
 ### Deploy your project with genezio
@@ -94,7 +71,7 @@ Log in to Genezio using the command genezio login:
 genezio login
 ```
 
-Deploy your project using the genezio deploy command from the `./genezio-examples/javascript/chatgpt-project` directory.
+Deploy your project using the following command:
 
 ```
 genezio deploy
