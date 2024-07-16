@@ -1,22 +1,23 @@
 import OpenAI from "openai";
 import { GenezioDeploy } from "@genezio/types";
+import {OPENAI_SECRET_KEY} from "./config/constants";
 
 const red_color = "\x1b[31m%s\x1b[0m";
 const missing_env_error =
-  "ERROR: Your OPENAI_SECRET_KEY environment variable is not properly set, go to https://platform.openai.com/account/api-keys to get your API key and set it in your server/.env file as OPENAI_SECRET_KEY = 'your-api-key'";
+  "ERROR: Your OPENAI_SECRET_KEY is not properly set, go to https://platform.openai.com/account/api-keys to get your API key and set it in your server/config/constants.ts file.";
 
 @GenezioDeploy()
 export class GptCaller {
   openai = null;
 
   constructor() {
-    if (!process.env.OPENAI_SECRET_KEY) {
+    if (OPENAI_SECRET_KEY==="YOUR_OPENAI") {
       console.log(red_color, missing_env_error);
       return;
     }
     try {
       this.openai = new OpenAI({
-        apiKey: process.env.OPENAI_SECRET_KEY,
+        apiKey: OPENAI_SECRET_KEY,
       });
     } catch (error) {
       console.log(error);
@@ -25,7 +26,7 @@ export class GptCaller {
   }
 
   async askChatGPT(requestText) {
-    if (!process.env.OPENAI_SECRET_KEY) {
+    if (OPENAI_SECRET === "YOUR_OPENAI") {
       console.log(red_color, missing_env_error);
       return { success: false, err: missing_env_error };
     }
